@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Mariana Jaber — Cosmologist</title>
-<meta name="description" content="Mariana Jaber is a cosmologist working at the interface of theory and observations — large-scale structure, peculiar velocities, the cosmic web, dark energy, and modified gravity.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%230A0E1F%22/><circle cx=%2216%22 cy=%2216%22 r=%229%22 fill=%22none%22 stroke=%22%23E2A03F%22 stroke-width=%222%22 stroke-dasharray=%223 3%22/><circle cx=%2220%22 cy=%2218%22 r=%226%22 fill=%22none%22 stroke=%22%235FA8A0%22 stroke-width=%222%22/></svg>">
+<title>PAIRS — Pairwise velocities in the cosmic web</title>
+<meta name="description" content="PAIRS is a cosmology project using the relative motion of galaxy pairs, read in the context of the cosmic web, to constrain dark matter, dark energy, and gravity.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 fill=%22%230A0E1F%22/><circle cx=%2210%22 cy=%2212%22 r=%223%22 fill=%22%23E2A03F%22/><circle cx=%2222%22 cy=%2220%22 r=%223%22 fill=%22%235FA8A0%22/><path d=%22M10 12 Q16 16 22 20%22 stroke=%22%2398A0BE%22 stroke-width=%221%22 fill=%22none%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -47,12 +47,23 @@
     outline:2px solid var(--teal);
     outline-offset:3px;
   }
-  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.03em; }
-  .wrap{ max-width:var(--max); margin:0 auto; padding:0 28px; }
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.03em;
+  }
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
-    font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--teal); display:block; margin-bottom:14px;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--teal);
+    display:block;
+    margin-bottom:14px;
   }
 
   /* ---------- nav ---------- */
@@ -62,15 +73,26 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--rule);
   }
-  nav .bar{ display:flex; align-items:center; justify-content:space-between; padding:16px 28px; }
-  .brand{ display:flex; align-items:center; gap:10px; font-family:'Fraunces', serif; font-weight:600; font-size:19px; color:var(--ink); }
+  nav .bar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:'Fraunces', serif; font-weight:600; font-size:19px;
+    color:var(--ink);
+  }
   .brand svg{width:26px; height:26px; flex-shrink:0;}
-  .navlinks{ display:flex; gap:26px; list-style:none; margin:0; padding:0; }
-  .navlinks a{ color:var(--ink-soft); font-size:14.5px; font-weight:500; }
+  .navlinks{
+    display:flex; gap:26px; list-style:none; margin:0; padding:0;
+  }
+  .navlinks a{
+    color:var(--ink-soft); font-size:14.5px; font-weight:500;
+  }
   .navlinks a:hover{color:var(--gold); text-decoration:none;}
   .navtoggle{display:none; background:none; border:1px solid var(--rule); color:var(--ink); padding:8px 12px; border-radius:6px; font:inherit;}
 
-  @media (max-width:760px){
+  @media (max-width:720px){
     .navlinks{
       position:absolute; top:64px; left:0; right:0;
       flex-direction:column; gap:0;
@@ -79,122 +101,260 @@
       max-height:0; overflow:hidden;
       transition:max-height 0.25s ease;
     }
-    .navlinks.open{max-height:380px;}
+    .navlinks.open{max-height:320px;}
     .navlinks a{display:block; padding:14px 28px; border-top:1px solid var(--rule);}
     .navtoggle{display:inline-block;}
   }
 
   /* ---------- hero ---------- */
-  .hero{ position:relative; overflow:hidden; padding:96px 0 100px; border-bottom:1px solid var(--rule); }
-  .web-field{ position:absolute; inset:0; z-index:0; opacity:0.5; }
-  .hero .wrap{position:relative; z-index:1;}
-  .hero-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:center; }
-  .hero h1{ font-size:clamp(40px, 6vw, 62px); line-height:1.04; color:var(--paper); }
-  .hero .role{ display:block; margin-top:16px; font-size:18px; color:var(--ink-soft); }
-  .hero .lede{ margin-top:22px; font-size:18.5px; max-width:48ch; color:var(--ink-soft); }
-  .hero .cta-row{ margin-top:32px; display:flex; gap:16px; flex-wrap:wrap; }
-  .cta{
-    display:inline-flex; align-items:center; gap:8px;
-    font-family:'IBM Plex Mono', monospace; font-size:13.5px;
-    padding:11px 20px; border-radius:4px; border:1px solid var(--rule); color:var(--ink);
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:96px 0 110px;
+    border-bottom:1px solid var(--rule);
   }
-  .cta.primary{ border-color:var(--gold); color:var(--gold); }
-  .cta.primary:hover{ background:var(--gold); color:var(--void); text-decoration:none; }
-  .cta:hover{ text-decoration:none; border-color:var(--teal); color:var(--teal); }
-
-  .glyph-orbit{ display:flex; justify-content:center; }
-  .glyph-orbit svg{width:100%; max-width:280px;}
+  .web-field{
+    position:absolute; inset:0;
+    z-index:0;
+    opacity:0.55;
+  }
+  .hero .wrap{position:relative; z-index:1;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(40px, 6vw, 64px);
+    line-height:1.04;
+    color:var(--paper);
+  }
+  .hero h1 em{
+    font-style:italic; color:var(--gold); font-weight:500;
+  }
+  .hero .lede{
+    margin-top:22px;
+    font-size:19px;
+    max-width:46ch;
+    color:var(--ink-soft);
+  }
+  .hero .lede strong{color:var(--ink); font-weight:600;}
+  .glyph-orbit{
+    display:flex; justify-content:center;
+  }
+  .glyph-orbit svg{width:100%; max-width:300px;}
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
     .glyph-orbit{order:-1; margin-bottom:8px;}
-    .glyph-orbit svg{max-width:190px;}
+    .glyph-orbit svg{max-width:200px;}
   }
 
-  @keyframes spin-slow{ to{ transform:rotate(360deg); } }
-  .ring-theory{ transform-origin:140px 140px; animation:spin-slow 40s linear infinite; }
-  @media (prefers-reduced-motion: reduce){ .ring-theory{animation:none;} }
+  @keyframes drift-a{
+    0%,100%{ transform:translate(0,0); }
+    50%{ transform:translate(6px,-8px); }
+  }
+  @keyframes drift-b{
+    0%,100%{ transform:translate(0,0); }
+    50%{ transform:translate(-7px,6px); }
+  }
+  .node-a{animation:drift-a 7s ease-in-out infinite;}
+  .node-b{animation:drift-b 8s ease-in-out infinite;}
+  @media (prefers-reduced-motion: reduce){
+    .node-a,.node-b{animation:none;}
+  }
 
   /* ---------- sections ---------- */
   section{padding:88px 0;}
-  .section-head{max-width:660px; margin-bottom:48px;}
+  .section-head{max-width:640px; margin-bottom:48px;}
   .section-head h2{font-size:clamp(28px,3.4vw,38px); color:var(--paper);}
   .section-head p{margin-top:14px; color:var(--ink-soft); font-size:17px;}
+
   .panel-bg{background:var(--panel); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
 
-  /* about */
-  .about-grid{ display:grid; grid-template-columns:240px 1fr; gap:44px; align-items:start; }
-  .about-photo{ width:100%; border-radius:4px; border:1px solid var(--rule); display:block; }
-  .about-body p{ color:var(--ink-soft); font-size:16px; margin-bottom:16px; }
-  .about-body strong{ color:var(--ink); font-weight:600; }
-  .aside-box{
-    margin-top:26px; padding:22px 24px;
-    border:1px solid var(--rule); border-radius:4px; background:var(--panel-soft);
+  /* team */
+  .team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:24px;
   }
-  .aside-box .eyebrow{margin-bottom:10px;}
-  .aside-box p{ color:var(--ink-soft); font-size:14.8px; }
-  @media (max-width:760px){ .about-grid{grid-template-columns:1fr;} .about-photo{max-width:220px;} }
+  .team-card{
+    background:var(--panel-soft);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:28px;
+  }
+  .team-card h3{font-size:20px; color:var(--ink); margin-bottom:6px;}
+  .team-card h3 a{color:inherit;}
+  .team-card h3 a:hover{color:var(--gold);}
+  .team-card .role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--teal); text-transform:uppercase; letter-spacing:0.08em;
+    display:block; margin-bottom:14px;
+  }
+  .team-card p{color:var(--ink-soft); font-size:15.3px;}
+  @media (max-width:860px){ .team-grid{grid-template-columns:1fr;} }
 
-  /* research topic cards */
-  .topic-grid{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
-    background:var(--rule); border:1px solid var(--rule);
+  /* objectives */
+  .obj-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
   }
-  .topic-card{ background:var(--void); padding:28px 30px 32px; }
-  .topic-card .tag{
-    font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+  .obj-card{
+    background:var(--void);
+    padding:30px 30px 34px;
+  }
+  .obj-card .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
     color:var(--gold); display:block; margin-bottom:12px;
   }
-  .topic-card p{ color:var(--ink-soft); font-size:15.3px; line-height:1.55; }
-  @media (max-width:760px){ .topic-grid{grid-template-columns:1fr;} }
-  .section-foot-link{
-    display:inline-flex; align-items:center; gap:6px; margin-top:28px;
-    font-family:'IBM Plex Mono', monospace; font-size:13.5px; color:var(--teal);
+  .obj-card h3{font-size:19px; line-height:1.35; color:var(--ink); font-weight:500; font-family:'Inter',sans-serif;}
+  .obj-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; letter-spacing:0.02em;
+    color:var(--teal);
     border-bottom:1px solid transparent;
   }
-  .section-foot-link:hover{ color:var(--gold); text-decoration:none; border-bottom-color:var(--gold); }
+  .obj-link:hover{ color:var(--gold); text-decoration:none; border-bottom-color:var(--gold); }
+  @media (max-width:860px){ .obj-grid{grid-template-columns:1fr;} }
 
-  /* projects */
-  .project-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px; }
-  .project-card{
-    border:1px solid var(--rule); border-radius:4px; padding:30px;
-    background:var(--panel-soft); display:flex; flex-direction:column;
+  /* how we work — vertical filament timeline */
+  .flow{
+    position:relative;
+    padding-left:46px;
   }
-  .project-card.placeholder{
-    border-style:dashed; background:transparent; justify-content:center; align-items:flex-start;
+  .flow::before{
+    content:'';
+    position:absolute; left:13px; top:6px; bottom:6px;
+    width:1px;
+    background:linear-gradient(to bottom, var(--teal), var(--rule));
   }
-  .project-card .ptag{
-    font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--teal); display:block; margin-bottom:12px;
+  .flow-step{
+    position:relative;
+    padding-bottom:38px;
   }
-  .project-card h3{ font-size:21px; color:var(--ink); margin-bottom:10px; }
-  .project-card p{ color:var(--ink-soft); font-size:15.3px; flex-grow:1; }
-  .project-card .go{
-    margin-top:20px; display:inline-flex; align-items:center; gap:6px;
-    font-family:'IBM Plex Mono', monospace; font-size:13.5px; color:var(--gold);
+  .flow-step:last-child{padding-bottom:0;}
+  .flow-step::before{
+    content:'';
+    position:absolute; left:-46px; top:4px;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 0 4px var(--void), 0 0 0 5px var(--rule);
   }
-  .project-card .go:hover{ color:var(--teal); }
-  .project-card.placeholder p{ color:var(--ink-soft); font-size:14.5px; }
+  .flow-step .idx{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; color:var(--ink-soft); display:block; margin-bottom:6px;
+  }
+  .flow-step h3{font-size:18px; color:var(--ink); font-weight:600; margin-bottom:6px; font-family:'Inter',sans-serif;}
+  .flow-step p{color:var(--ink-soft); font-size:15.5px; max-width:54ch;}
 
-  /* contact */
-  .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
-  .contact-block .label{
-    font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
-    color:var(--gold); display:block; margin-bottom:10px;
+  /* scope: stages */
+  .stage-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
   }
-  .contact-block p{ color:var(--ink-soft); font-size:15.5px; line-height:1.6; margin-bottom:18px; }
-  .contact-block a{ color:var(--ink); }
-  .contact-block a:hover{ color:var(--gold); }
-  .badge-row{ display:flex; gap:10px; flex-wrap:wrap; }
-  .s-badge{
-    border:1px solid var(--rule); border-radius:100px; padding:9px 16px;
-    font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--ink-soft);
+  .stage{
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:26px;
+    background:var(--panel-soft);
   }
-  .s-badge:hover{ border-color:var(--teal); color:var(--teal); }
-  @media (max-width:760px){ .contact-grid{grid-template-columns:1fr;} }
+  .stage .roman{
+    font-family:'Fraunces', serif; font-style:italic; font-size:34px; color:var(--gold); display:block; line-height:1;
+  }
+  .stage h3{margin-top:10px; font-size:17.5px; color:var(--ink);}
+  .stage p{margin-top:8px; color:var(--ink-soft); font-size:14.8px;}
+  @media (max-width:860px){ .stage-row{grid-template-columns:1fr;} }
 
-  footer{ border-top:1px solid var(--rule); padding:36px 0 48px; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+  /* coming soon */
+  .badges{display:flex; gap:14px; flex-wrap:wrap; margin-top:26px;}
+  .badge{
+    border:1px solid var(--rule);
+    border-radius:100px;
+    padding:9px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .repo-link{
+    margin-top:30px;
+    display:inline-flex; align-items:center; gap:10px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    padding:12px 22px;
+    border-radius:4px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+  }
+  .repo-link:hover{ background:var(--gold); color:var(--void); text-decoration:none; }
+
+  /* funding */
+  .funding p{color:var(--ink-soft); font-size:15px; max-width:62ch;}
+  .funding p + p{margin-top:14px;}
+  .funding a{color:var(--teal);}
+
+  /* research / publications */
+  .pub-group{
+    border-top:1px solid var(--rule);
+    padding:30px 0;
+  }
+  .pub-group:first-child{border-top:none; padding-top:0;}
+  .pub-group .pub-head{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:32px;
+  }
+  .pub-group .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold);
+  }
+  .pub-group .pub-note{
+    color:var(--ink-soft);
+    font-size:15px;
+    max-width:60ch;
+    margin-bottom:18px;
+  }
+  .pub-list{list-style:none; margin:0; padding:0;}
+  .pub-list li{
+    padding:10px 0;
+    border-top:1px solid var(--rule);
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .pub-list li:first-child{border-top:none;}
+  .pub-list a{
+    color:var(--ink);
+    font-size:15.5px;
+    font-weight:500;
+  }
+  .pub-list a:hover{color:var(--gold);}
+  .pub-list .cite{
+    display:block;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    margin-top:3px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  @media (max-width:760px){
+    .pub-group .pub-head{grid-template-columns:1fr;}
+  }
+
+  footer{
+    border-top:1px solid var(--rule);
+    padding:36px 0 48px;
+  }
+  footer .wrap{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  }
   footer p{color:var(--ink-soft); font-size:13.5px;}
   footer .navlinks-foot a{color:var(--ink-soft); font-size:13.5px; margin-left:18px;}
   footer .navlinks-foot a:hover{color:var(--gold);}
@@ -204,27 +364,37 @@
 </head>
 <body>
 
+<svg style="position:absolute; width:0; height:0;" aria-hidden="true">
+  <defs>
+    <symbol id="pair-glyph" viewBox="0 0 64 64">
+      <circle cx="14" cy="16" r="6" fill="var(--gold)"/>
+      <circle cx="50" cy="48" r="6" fill="var(--teal)"/>
+      <path d="M14 16 Q32 28 50 48" stroke="var(--ink-soft)" stroke-width="1.4" fill="none"/>
+    </symbol>
+  </defs>
+</svg>
+
 <nav>
   <div class="bar wrap" style="padding-left:0; padding-right:0;">
-    <a href="#" class="brand" aria-label="Mariana Jaber home">
-      <svg viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="14" cy="14" r="9" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="2.5 2.5"/>
-        <circle cx="19" cy="18" r="6" fill="none" stroke="var(--teal)" stroke-width="2"/>
-      </svg>
-      Mariana Jaber
+    <a href="../index.html" class="brand" aria-label="PAIRS home">
+      <svg viewBox="0 0 64 64"><use href="#pair-glyph"/></svg>
+      PAIRS
     </a>
     <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navlinks">Menu</button>
     <ul class="navlinks" id="navlinks">
-      <li><a href="#about">About</a></li>
+      <li><a href="../index.html">← Mariana Jaber</a></li>
+      <li><a href="#about">Project</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#objectives">Objectives</a></li>
+      <li><a href="#method">Method</a></li>
       <li><a href="#research">Research</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="https://jabermariana.wixsite.com/cosmology/cv">CV ↗</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#funding">Funding</a></li>
+      <li><a href="https://github.com/PAIRSteam">GitHub ↗</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="hero" id="top">
+<header class="hero" id="about">
   <svg class="web-field" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
     <g stroke="var(--rule)" stroke-width="1" fill="none">
       <path d="M50 80 L300 180 L520 90 L760 220 L980 120 L1150 240"/>
@@ -247,136 +417,288 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">Cosmologist · NCBJ, Warsaw</span>
-        <h1>Mariana Jaber</h1>
-        <span class="role mono">Theory ⟷ observations · large-scale structure · cosmic web</span>
+        <span class="eyebrow">A SONATA-19 cosmology project</span>
+        <h1>PAIR<em>w</em>iSe velocities<br>in the cosmic web</h1>
         <p class="lede">
-          I work at the interface of theory and observations, using computational methods to study large-scale structure, peculiar velocities, the cosmic web, dark energy, and modified gravity.
+          Galaxies don't sit still — gravity pulls them toward one another, and how fast a <strong>pair</strong> closes that gap carries a signature of the dark matter, dark energy, and gravity that shaped it. PAIRS reads that signature where it's hardest to model: on small scales, inside voids, walls, filaments and nodes.
         </p>
-        <div class="cta-row">
-          <a class="cta primary" href="#projects">View projects</a>
-          <a class="cta" href="#about">About me</a>
-          <a class="cta" href="#contact">Get in touch</a>
-        </div>
       </div>
       <div class="glyph-orbit">
-        <svg viewBox="0 0 280 280" aria-hidden="true">
-          <g class="ring-theory">
-            <circle cx="140" cy="140" r="80" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="4 6"/>
-          </g>
-          <circle cx="170" cy="160" r="60" fill="none" stroke="var(--teal)" stroke-width="2"/>
-          <g fill="var(--teal)">
-            <circle cx="170" cy="100" r="2.6"/>
-            <circle cx="218" cy="135" r="2.6"/>
-            <circle cx="222" cy="180" r="2.6"/>
-            <circle cx="190" cy="216" r="2.6"/>
-            <circle cx="140" cy="200" r="2.6"/>
-            <circle cx="125" cy="155" r="2.6"/>
-          </g>
+        <svg viewBox="0 0 220 220" aria-hidden="true">
+          <circle cx="60" cy="60" r="7" fill="var(--gold)" class="node-a"/>
+          <circle cx="160" cy="160" r="7" fill="var(--teal)" class="node-b"/>
+          <path d="M60 60 Q110 95 160 160" stroke="var(--ink-soft)" stroke-width="1.2" fill="none" stroke-dasharray="3 5"/>
+          <circle cx="60" cy="60" r="22" fill="none" stroke="var(--gold)" stroke-opacity="0.25"/>
+          <circle cx="160" cy="160" r="22" fill="none" stroke="var(--teal)" stroke-opacity="0.25"/>
         </svg>
       </div>
     </div>
   </div>
 </header>
 
-<section id="about">
+<section id="team" class="panel-bg">
   <div class="wrap">
-    <span class="eyebrow">Who I am</span>
-    <div class="about-grid">
-      <img class="about-photo" src="https://static.wixstatic.com/media/666d7b_2d42f72c55104efbb9ac650f0688cb8f~mv2.jpg/v1/crop/x_0,y_0,w_3333,h_3333/fill/w_330,h_330,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/cft_photo_B.jpg" alt="Portrait of Mariana Jaber" loading="lazy">
-      <div class="about-body">
-        <p>I'm originally from Mexico City, with part of my childhood spent near the Gulf coast in Campeche. I studied physics at the Faculty of Physics of Universidad Veracruzana, then returned to Mexico City for a master's and PhD at UNAM, working with <strong>Axel de la Macorra</strong>, <strong>Octavio Valenzuela</strong>, and <strong>Miguel Alcubierre</strong> on the signatures of dynamical dark energy and modified gravity in baryon acoustic oscillations and galaxy redshift surveys.</p>
-        <p>In 2019 I moved to Poland for a postdoctoral position in the inhomogeneous cosmology group led by Boudewijn Roukema at NCU Toruń. In 2021 I joined the Computational Cosmology Group at the Center for Theoretical Physics PAS in Warsaw, led by Wojtek Hellwing and Maciej Bilicki, before starting my own group in 2025 as Principal Investigator of the NCN SONATA-funded <a href="pairs/index.html">PAIRS</a> project. I'm currently a PI at the National Centre for Nuclear Research (NCBJ).</p>
-        <p>I teach and supervise students in cosmology and data analysis, referee for leading journals, and take part in international collaborations including LSST, DESC, and CLUES. Alongside research, I mentor early-career scientists and serve on the leadership board of the <a href="https://supernovafoundation.org/">Supernova Foundation</a>, which supports women and other underrepresented groups in astronomy.</p>
-        <div class="aside-box">
-          <span class="eyebrow" style="margin-bottom:8px;">Outside the lab</span>
-          <p>I bake, forage for wild mushrooms during Polish mushroom season, and used to practice Taekwon-do and Limalama. I've also helped translate popular-science texts into indigenous languages. I am, by contrast, a famously unsuccessful gardener — even succulents seem unimpressed.</p>
-        </div>
+    <div class="section-head">
+      <span class="eyebrow">Who's behind it</span>
+      <h2>Meet the team</h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <span class="role">Principal investigator</span>
+        <h3><a href="../index.html#about">Mariana Jaber</a></h3>
+        <p>Cosmologist leading the project, with expertise in theoretical modelling, cosmological inference, and the physics of large-scale structure.</p>
+      </div>
+      <div class="team-card">
+        <span class="role">Simulations &amp; data analysis</span>
+        <h3><a href="https://github.com/antotaverna">Antonela Taverna</a></h3>
+        <p>Doctor in Astronomy and Physics, National University of Córdoba. Handles large cosmological simulations and the study of the cosmic web in observations and simulations.</p>
+      </div>
+      <div class="team-card">
+        <span class="role">Theory &amp; simulations</span>
+        <h3><a href="https://nbi.ku.dk/english/theses/masters-theses/rasmus-strid/">Rasmus Strid</a></h3>
+        <p>Doctoral researcher with a master's in Physics from the University of Copenhagen. Connects theory and simulations, extending analytical templates toward more realistic scenarios.</p>
+      </div>
+      <div class="team-card">
+        <span class="role">External collaborator</span>
+        <h3><a href="https://oliver-newton.com/">Oliver Newton</a></h3>
+        <p>Marie Skłodowska-Curie Fellow in the Astrophysics Research Group at the University of Surrey, working on dwarf galaxies, dark matter substructure, and the galaxy–environment connection.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="research" class="panel-bg">
+<section id="objectives">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">What I work on</span>
-      <h2>Theory meets data, on every scale</h2>
-      <p>My research sits at the interface of theoretical models and the computational analysis of astronomical survey data, with a recurring focus on what galaxy motions and environments reveal about gravity and the dark sector.</p>
+      <span class="eyebrow">What PAIRS is about</span>
+      <h2>Four open questions, one dynamical lens</h2>
+      <p>Peculiar motions — the streaming of galaxies toward denser regions — encode information that static positions alone can't give up. PAIRS turns the relative motion of galaxy pairs into an independent test of the cosmological model.</p>
     </div>
-    <div class="topic-grid">
-      <div class="topic-card">
+    <div class="obj-grid">
+      <div class="obj-card">
+        <span class="tag">Cosmological constraints</span>
+        <h3>Use galaxy motions to obtain robust, independent constraints on matter density, the Hubble expansion rate, and the amplitude of cosmic clustering.</h3>
+      </div>
+      <div class="obj-card">
+        <span class="tag">Small-scale modelling</span>
+        <h3>Develop improved models of how galaxies trace dark matter that stay valid on very small, highly non-linear scales.</h3>
+      </div>
+      <div class="obj-card">
+        <span class="tag">Merger physics</span>
+        <h3>Understand how galaxy and halo mergers modify the standard assumptions behind pairwise-velocity theory.</h3>
+      </div>
+      <div class="obj-card">
+        <span class="tag">Cosmic-web environment</span>
+        <h3>Quantify how voids, walls, filaments and nodes shape galaxy motions and the galaxy–halo connection.</h3>
+        <a class="obj-link" href="visuals/spine_cosmic_web.html">View the 3D cosmic-web spine model ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="method" class="panel-bg">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How we work</span>
+      <h2>Theory, simulations, statistics</h2>
+      <p>Five steps carry the project from a revised equation of motion to numbers that survey teams can use.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <span class="idx mono">01 — theory</span>
+        <h3>Extend the infall equation</h3>
+        <p>Revisit the theoretical equation describing how pairs of galaxies fall toward each other, allowing for non-conservative effects such as mergers.</p>
+      </div>
+      <div class="flow-step">
+        <span class="idx mono">02 — simulations</span>
+        <h3>Measure motion in virtual universes</h3>
+        <p>Use large, state-of-the-art cosmological simulations — TNG, Quijote, and Bolshoi — to track the motions of dark matter, haloes, and galaxies under controlled conditions.</p>
+      </div>
+      <div class="flow-step">
+        <span class="idx mono">03 — topology</span>
+        <h3>Map the cosmic web</h3>
+        <p>Segment those simulations into environments — voids, walls, filaments, nodes — using advanced topology-based algorithms.</p>
+      </div>
+      <div class="flow-step">
+        <span class="idx mono">04 — bias models</span>
+        <h3>Match theory to measurement</h3>
+        <p>Build and test enhanced galaxy-bias models by fitting analytical predictions to simulation measurements, across environments and scales.</p>
+      </div>
+      <div class="flow-step">
+        <span class="idx mono">05 — inference</span>
+        <h3>Run the MCMC</h3>
+        <p>Translate the new velocity-based statistics into cosmological parameter constraints, and forecast their reach for current and future galaxy surveys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Scope and impact</span>
+      <h2>Three stages, one trajectory</h2>
+      <p>From theoretical foundations and data preparation, through measurement and model-building, to cosmological constraints the field can use.</p>
+    </div>
+    <div class="stage-row">
+      <div class="stage">
+        <span class="roman">I.</span>
+        <h3>Foundations</h3>
+        <p>Theory revision and the preparation of simulation data.</p>
+      </div>
+      <div class="stage">
+        <span class="roman">II.</span>
+        <h3>Measurement</h3>
+        <p>Cosmic-web segmentation and small-scale bias-model building.</p>
+      </div>
+      <div class="stage">
+        <span class="roman">III.</span>
+        <h3>Constraints</h3>
+        <p>Cosmological parameter estimation and forecasts for surveys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Selected publications</span>
+      <h2>Research behind PAIRS</h2>
+      <p>PAIRS builds on Mariana Jaber's ongoing work on pairwise velocities, beyond-ΛCDM models, the galaxy–environment connection, and galaxy redshift surveys.</p>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
         <span class="tag">Pairwise velocities</span>
-        <p>The typical relative motion of galaxy pairs, modelled down to sub-megaparsec scales and used to extract cosmological information inaccessible to standard clustering or lensing analyses.</p>
-      </div>
-      <div class="topic-card">
-        <span class="tag">Beyond ΛCDM</span>
-        <p>Parameterizations and numerical tools spanning dynamical dark energy, modified gravity, and alternative dark matter, tested against survey data and simulations.</p>
-      </div>
-      <div class="topic-card">
-        <span class="tag">Galaxy–environment connection</span>
-        <p>How galaxy size, stellar mass, star-formation rate, and metallicity vary with position in the cosmic web — from voids to filaments and clusters.</p>
-      </div>
-      <div class="topic-card">
-        <span class="tag">Galaxy redshift surveys</span>
-        <p>Alcock–Paczyński tests on eBOSS/SDSS clustering data, comparing structure along and across the line of sight to constrain the geometry of the Universe.</p>
-      </div>
-    </div>
-    <a class="section-foot-link" href="pairs/index.html#research">Full publication list, via the PAIRS project page ↗</a>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Current work</span>
-      <h2>Projects</h2>
-      <p>PAIRS is the first project to get its own page here — more will follow as they take shape.</p>
-    </div>
-    <div class="project-grid">
-      <div class="project-card">
-        <span class="ptag">2025 — ongoing</span>
-        <h3>PAIRS</h3>
-        <p>Pairwise velocities in the context of the cosmic web. Using how galaxies move toward or away from each other to constrain dark matter, dark energy, and gravity on small, highly non-linear scales. Funded by NCN Poland under SONATA-19.</p>
-        <a class="go" href="pairs/index.html">Visit project ↗</a>
-      </div>
-      <div class="project-card placeholder">
-        <span class="ptag">Coming next</span>
-        <h3 style="font-size:18px; color:var(--ink-soft);">More projects soon</h3>
-        <p>This space will grow as new projects start. Check back, or follow along on GitHub.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="panel-bg">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Get in touch</span>
-      <h2>Contact</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-block">
-        <span class="label">Address</span>
-        <p>National Centre for Nuclear Research<br>
-        Astrophysics Division, Office 506<br>
-        Ludwika Pasteura 7, 02-093<br>
-        Warsaw, Poland</p>
-        <span class="label">Email</span>
-        <p><a href="mailto:mariana.jaber@ncbj.gov.pl">mariana.jaber@ncbj.gov.pl</a><br>
-        <a href="mailto:cosmo.marianajbr@gmail.com">cosmo.marianajbr@gmail.com</a></p>
-      </div>
-      <div class="contact-block">
-        <span class="label">Elsewhere</span>
-        <div class="badge-row">
-          <a class="s-badge" href="https://inspirehep.net/authors/1707914">Inspire HEP</a>
-          <a class="s-badge" href="https://bsky.app/profile/marianajbr.bsky.social">Bluesky</a>
-          <a class="s-badge" href="https://orcid.org/my-orcid?orcid=0000-0001-7507-9516">ORCID</a>
-          <a class="s-badge" href="https://github.com/MarianaJBr">GitHub</a>
-          <a class="s-badge" href="https://bitbucket.org/mariannejbr/workspace/overview">Bitbucket</a>
-          <a class="s-badge" href="https://www.researchgate.net/profile/Mariana-Jaber-Bravo">ResearchGate</a>
+        <div>
+          <p class="pub-note">Modelling the mean pairwise peculiar velocity of galaxies down to sub-megaparsec scales, and applying it to data to extract cosmological information inaccessible to standard clustering or lensing analyses.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://zenodo.org/records/19130811">Pairwise Velocities as a Cosmological Probe</a>
+              <span class="cite">Preliminary results, 2026 · Zenodo</span>
+            </li>
+            <li>
+              <a href="https://zenodo.org/records/19130743">Breaking pair conservation: Mergers in the BBGKY hierarchy</a>
+              <span class="cite">Preliminary results, 2026 · Zenodo</span>
+            </li>
+            <li>
+              <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.123528">Jaber et al, 2025</a>
+              <span class="cite">Phys. Rev. D 109, 123528</span>
+            </li>
+          </ul>
         </div>
       </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Beyond ΛCDM models</span>
+        <div>
+          <p class="pub-note">Parameterizations and numerical tools spanning dynamical dark energy, modified gravity, and alternative dark matter, tested against survey data and simulations.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://sites.google.com/view/gravity-symposium/home">MiniSymposium on Modified Gravity</a>
+              <span class="cite">Event page</span>
+            </li>
+            <li>
+              <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.083511">Naidoo, Jaber, et al, 2024</a>
+              <span class="cite">Phys. Rev. D 109, 083511</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2021arXiv210208561A/abstract">Jaber et al, 2022</a>
+              <span class="cite">Physics of the Dark Universe, 111069</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2021PhRvD.104b3529D/abstract">de la Macorra, Gomez, Avilés, Jaber, Mastache, Almaraz, 2021</a>
+              <span class="cite">Phys. Rev. D 104, 023529</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2020JCAP...09..050C/abstract">Ningombam, Jaber, et al, 2020</a>
+              <span class="cite">JCAP 09 (2020) 050</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2020APh...11502388J/abstract">Jaber et al, 2020</a>
+              <span class="cite">Astroparticle Physics, 102388</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2018PhRvD..98h3530J/abstract">Jaime, Jaber, et al, 2018</a>
+              <span class="cite">Phys. Rev. D 98, 083530</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2018APh....97..130J/abstract">Jaber et al, 2017</a>
+              <span class="cite">Astroparticle Physics, 97, 130</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Galaxy–environment connection</span>
+        <div>
+          <p class="pub-note">How a galaxy's size, stellar mass, star-formation rate, and metallicity vary with its place in the cosmic web — from voids to filaments and clusters.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://zenodo.org/records/19130930">The cosmic web of our local universe</a>
+              <span class="cite">Preliminary results, 2026 · Zenodo</span>
+            </li>
+            <li>
+              <a href="https://doi.org/10.1093/mnras/stad3347">Jaber et al, 2023</a>
+              <span class="cite">MNRAS</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Galaxy redshift surveys</span>
+        <div>
+          <p class="pub-note">An Alcock–Paczyński test on the eBOSS Luminous Red Galaxy sample, comparing clustering along and across the line of sight to constrain the geometry of the Universe.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://iopscience.iop.org/article/10.3847/1538-4365/ab929e">Ahumada, et al (incl. M. Jaber), 2020</a>
+              <span class="cite">Astrophys. J. Suppl. 249, 1, 3 — eBOSS data release</span>
+            </li>
+            <li>
+              <a href="https://github.com/MarianaJBr/AP-RSD-py">AP-RSD-py</a>
+              <span class="cite">Public code</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="coming-soon" class="panel-bg">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <span class="eyebrow">Coming soon</span>
+      <h2>Data products, codes, and results</h2>
+      <p>The project will deliver new theoretical templates, curated simulation catalogues, improved small-scale bias models, and public cosmological constraints and forecasts.</p>
+      <div class="badges">
+        <span class="badge">Data Products</span>
+        <span class="badge">Numerical Codes</span>
+        <span class="badge">Scientific Results</span>
+      </div>
+      <a class="repo-link" href="https://github.com/PAIRSteam">github.com/PAIRSteam ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="funding">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Funding &amp; acknowledgments</span>
+      <h2>Support</h2>
+    </div>
+    <div class="funding">
+      <p>This project is funded by the <a href="https://www.ncn.gov.pl/en">National Science Center of Poland</a> under the <a href="https://www.ncn.gov.pl/ogloszenia/konkursy/sonata19">SONATA-19</a> call, project number 2023/51/D/ST9/02919.</p>
+      <p>We acknowledge the Polish high-performance computing infrastructure <a href="https://portal.plgrid.pl/">PLGrid</a> for awarding this project access to the TRYTON supercomputer via grants PLG/2024/017481, PLG/2025/019011, and PLG/2026/019226.</p>
     </div>
   </div>
 </section>
@@ -385,10 +707,10 @@
   <div class="wrap">
     <p>© Mariana Jaber 2018–2026. All rights reserved.</p>
     <nav class="navlinks-foot">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#research">Research</a>
+      <a href="https://jabermariana.wixsite.com/cosmology/cv">CV</a>
+      <a href="../index.html#contact">Contact</a>
     </nav>
   </div>
 </footer>
