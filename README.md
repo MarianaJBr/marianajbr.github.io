@@ -69,6 +69,8 @@ applied. If you export a fresh Plotly HTML file later, add this to its
 
 ## CV
 
-The nav and footer currently link out to the CV page on the old Wix site
-(`jabermariana.wixsite.com/cosmology/cv`). Swap that link for a hosted PDF
-or a dedicated `/cv/` page whenever you're ready to move it over.
+`cv/CV.pdf` is the hosted CV, linked from the homepage hero ("Download CV"),
+the homepage nav, and the PAIRS page footer. It's generated from LaTeX on
+Overleaf — to update it: download the freshly compiled PDF from Overleaf,
+then in this repo replace `cv/CV.pdf` with the new file (same name and path,
+so GitHub offers to overwrite it). No link changes needed afterward.
