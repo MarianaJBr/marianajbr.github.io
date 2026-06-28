@@ -214,6 +214,15 @@
     color:var(--gold); display:block; margin-bottom:12px;
   }
   .obj-card h3{font-size:19px; line-height:1.35; color:var(--ink); font-weight:500; font-family:'Inter',sans-serif;}
+  .obj-link{
+    display:inline-flex; align-items:center; gap:6px;
+    margin-top:18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; letter-spacing:0.02em;
+    color:var(--teal);
+    border-bottom:1px solid transparent;
+  }
+  .obj-link:hover{ color:var(--gold); text-decoration:none; border-bottom-color:var(--gold); }
   @media (max-width:860px){ .obj-grid{grid-template-columns:1fr;} }
 
   /* how we work — vertical filament timeline */
@@ -292,6 +301,53 @@
   .funding p + p{margin-top:14px;}
   .funding a{color:var(--teal);}
 
+  /* research / publications */
+  .pub-group{
+    border-top:1px solid var(--rule);
+    padding:30px 0;
+  }
+  .pub-group:first-child{border-top:none; padding-top:0;}
+  .pub-group .pub-head{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:32px;
+  }
+  .pub-group .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--gold);
+  }
+  .pub-group .pub-note{
+    color:var(--ink-soft);
+    font-size:15px;
+    max-width:60ch;
+    margin-bottom:18px;
+  }
+  .pub-list{list-style:none; margin:0; padding:0;}
+  .pub-list li{
+    padding:10px 0;
+    border-top:1px solid var(--rule);
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .pub-list li:first-child{border-top:none;}
+  .pub-list a{
+    color:var(--ink);
+    font-size:15.5px;
+    font-weight:500;
+  }
+  .pub-list a:hover{color:var(--gold);}
+  .pub-list .cite{
+    display:block;
+    color:var(--ink-soft);
+    font-size:13.5px;
+    margin-top:3px;
+    font-family:'IBM Plex Mono', monospace;
+  }
+  @media (max-width:760px){
+    .pub-group .pub-head{grid-template-columns:1fr;}
+  }
+
   footer{
     border-top:1px solid var(--rule);
     padding:36px 0 48px;
@@ -330,6 +386,7 @@
       <li><a href="#team">Team</a></li>
       <li><a href="#objectives">Objectives</a></li>
       <li><a href="#method">Method</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#funding">Funding</a></li>
       <li><a href="https://github.com/PAIRSteam">GitHub ↗</a></li>
     </ul>
@@ -427,6 +484,7 @@
       <div class="obj-card">
         <span class="tag">Cosmic-web environment</span>
         <h3>Quantify how voids, walls, filaments and nodes shape galaxy motions and the galaxy–halo connection.</h3>
+        <a class="obj-link" href="visuals/spine_cosmic_web.html">View the 3D cosmic-web spine model ↗</a>
       </div>
     </div>
   </div>
@@ -491,6 +549,120 @@
         <span class="roman">III.</span>
         <h3>Constraints</h3>
         <p>Cosmological parameter estimation and forecasts for surveys.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Selected publications</span>
+      <h2>Research behind PAIRS</h2>
+      <p>PAIRS builds on Mariana Jaber's ongoing work on pairwise velocities, beyond-ΛCDM models, the galaxy–environment connection, and galaxy redshift surveys.</p>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Pairwise velocities</span>
+        <div>
+          <p class="pub-note">Modelling the mean pairwise peculiar velocity of galaxies down to sub-megaparsec scales, and applying it to data to extract cosmological information inaccessible to standard clustering or lensing analyses.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://zenodo.org/records/19130811">Pairwise Velocities as a Cosmological Probe</a>
+              <span class="cite">Preliminary results, 2026 · Zenodo</span>
+            </li>
+            <li>
+              <a href="https://zenodo.org/records/19130743">Breaking pair conservation: Mergers in the BBGKY hierarchy</a>
+              <span class="cite">Preliminary results, 2026 · Zenodo</span>
+            </li>
+            <li>
+              <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.123528">Jaber et al, 2025</a>
+              <span class="cite">Phys. Rev. D 109, 123528</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Beyond ΛCDM models</span>
+        <div>
+          <p class="pub-note">Parameterizations and numerical tools spanning dynamical dark energy, modified gravity, and alternative dark matter, tested against survey data and simulations.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://sites.google.com/view/gravity-symposium/home">MiniSymposium on Modified Gravity</a>
+              <span class="cite">Event page</span>
+            </li>
+            <li>
+              <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.109.083511">Naidoo, Jaber, et al, 2024</a>
+              <span class="cite">Phys. Rev. D 109, 083511</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2021arXiv210208561A/abstract">Jaber et al, 2022</a>
+              <span class="cite">Physics of the Dark Universe, 111069</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2021PhRvD.104b3529D/abstract">de la Macorra, Gomez, Avilés, Jaber, Mastache, Almaraz, 2021</a>
+              <span class="cite">Phys. Rev. D 104, 023529</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2020JCAP...09..050C/abstract">Ningombam, Jaber, et al, 2020</a>
+              <span class="cite">JCAP 09 (2020) 050</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2020APh...11502388J/abstract">Jaber et al, 2020</a>
+              <span class="cite">Astroparticle Physics, 102388</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2018PhRvD..98h3530J/abstract">Jaime, Jaber, et al, 2018</a>
+              <span class="cite">Phys. Rev. D 98, 083530</span>
+            </li>
+            <li>
+              <a href="https://ui.adsabs.harvard.edu/abs/2018APh....97..130J/abstract">Jaber et al, 2017</a>
+              <span class="cite">Astroparticle Physics, 97, 130</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Galaxy–environment connection</span>
+        <div>
+          <p class="pub-note">How a galaxy's size, stellar mass, star-formation rate, and metallicity vary with its place in the cosmic web — from voids to filaments and clusters.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://zenodo.org/records/19130930">The cosmic web of our local universe</a>
+              <span class="cite">Preliminary results, 2026 · Zenodo</span>
+            </li>
+            <li>
+              <a href="https://doi.org/10.1093/mnras/stad3347">Jaber et al, 2023</a>
+              <span class="cite">MNRAS</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="pub-group">
+      <div class="pub-head">
+        <span class="tag">Galaxy redshift surveys</span>
+        <div>
+          <p class="pub-note">An Alcock–Paczyński test on the eBOSS Luminous Red Galaxy sample, comparing clustering along and across the line of sight to constrain the geometry of the Universe.</p>
+          <ul class="pub-list">
+            <li>
+              <a href="https://iopscience.iop.org/article/10.3847/1538-4365/ab929e">Ahumada, et al (incl. M. Jaber), 2020</a>
+              <span class="cite">Astrophys. J. Suppl. 249, 1, 3 — eBOSS data release</span>
+            </li>
+            <li>
+              <a href="https://github.com/MarianaJBr/AP-RSD-py">AP-RSD-py</a>
+              <span class="cite">Public code</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
