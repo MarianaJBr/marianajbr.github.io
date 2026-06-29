@@ -223,6 +223,18 @@
     border-bottom:1px solid transparent;
   }
   .obj-link:hover{ color:var(--gold); text-decoration:none; border-bottom-color:var(--gold); }
+  .obj-link-list{
+    list-style:none; margin:18px 0 0; padding:0;
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .obj-link-list li a{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px; letter-spacing:0.02em;
+    color:var(--teal);
+    border-bottom:1px solid transparent;
+  }
+  .obj-link-list li a:hover{ color:var(--gold); text-decoration:none; border-bottom-color:var(--gold); }
   @media (max-width:860px){ .obj-grid{grid-template-columns:1fr;} }
 
   /* how we work — vertical filament timeline */
@@ -490,7 +502,12 @@
       <div class="obj-card">
         <span class="tag">Cosmic-web environment</span>
         <h3>Quantify how voids, walls, filaments and nodes shape galaxy motions and the galaxy–halo connection.</h3>
-        <a class="obj-link" href="visuals/spine_cosmic_web.html">View the 3D cosmic-web spine model ↗</a>
+        <ul class="obj-link-list">
+          <li><a href="visuals/spine_cosmic_web_weighted.html">Spine model — real space ↗</a></li>
+          <li><a href="visuals/spine_cosmic_web_weighted_zspace.html">Spine model — redshift space ↗</a></li>
+          <li><a href="visuals/nexus_cosmic_web_weighted.html">Nexus model — real space ↗</a></li>
+          <li><a href="visuals/nexus_cosmic_web_weighted_zspace.html">Nexus model — redshift space ↗</a></li>
+        </ul>
       </div>
     </div>
   </div>
